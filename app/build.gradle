@@ -15,17 +15,23 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("hardwork.jks")
-            storePassword project.hasProperty("KEYSTORE_PASS") ? KEYSTORE_PASS : System.getenv("KEYSTORE_PASS")
-            keyAlias project.hasProperty("ALIAS_NAME") ? ALIAS_NAME : System.getenv("ALIAS_NAME")
-            keyPassword project.hasProperty("ALIAS_PASS") ? ALIAS_PASS : System.getenv("ALIAS_PASS")
+            def keystoreFile = file("hardwork.jks")
+            if (keystoreFile.exists()) {
+                storeFile keystoreFile
+                storePassword project.hasProperty("KEYSTORE_PASS") ? KEYSTORE_PASS : System.getenv("KEYSTORE_PASS")
+                keyAlias project.hasProperty("ALIAS_NAME") ? ALIAS_NAME : System.getenv("ALIAS_NAME")
+                keyPassword project.hasProperty("ALIAS_PASS") ? ALIAS_PASS : System.getenv("ALIAS_PASS")
+            }
         }
     }
 
     buildTypes {
         release {
             minifyEnabled true
-            signingConfig signingConfigs.release
+            def keystoreFile = file("hardwork.jks")
+            if (keystoreFile.exists()) {
+                signingConfig signingConfigs.release
+            }
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
