@@ -71,14 +71,6 @@ public class NavAccessibilityService extends AccessibilityService {
         
         if (accessibilityEvent.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
 
-            if (FloatingBallUtils.sPendingSwitchToPrevious
-                    && accessibilityEvent.getPackageName() != null
-                    && isRecentsPackage(accessibilityEvent.getPackageName().toString())) {
-                FloatingBallUtils.sPendingSwitchToPrevious = false;
-                performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS);
-                return; // 这次事件已处理，跳过后续逻辑
-            }
-
             if(accessibilityEvent.getPackageName()!=null) {
                 String foregroundPackageName = accessibilityEvent.getPackageName().toString();
 
@@ -203,23 +195,5 @@ public class NavAccessibilityService extends AccessibilityService {
         intent.putExtra("move",isShowing);
         intent.setClass(this, FloatService.class);
         startService(intent);
-    }
-
-    // 新增辅助方法，放在类的末尾
-    private boolean isRecentsPackage(String pkg) {
-        switch (pkg) {
-            case "com.android.launcher3":
-            case "com.android.systemui":                 // 原生 AOSP / Pixel
-            case "com.miui.home":                        // 小米
-            case "com.huawei.android.launcher":          // 华为
-            case "com.samsung.android.app.taskedge":     // 三星
-            case "com.oppo.launcher":                    // OPPO
-            case "com.vivo.launcher":                    // vivo
-            case "com.oneplus.launcher":                 // 一加
-            case "com.realme.launcher":                  // Realme
-                return true;
-            default:
-                return false;
-        }
     }
 }
