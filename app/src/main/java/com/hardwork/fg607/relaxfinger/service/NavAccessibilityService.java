@@ -68,7 +68,23 @@ public class NavAccessibilityService extends AccessibilityService {
 
     @Override
     public void onAccessibilityEvent(final AccessibilityEvent accessibilityEvent) {
-
+    
+        if (FloatingBallUtils.sPendingSwitchToPrevious
+                && accessibilityEvent.getPackageName() != null) {
+            
+            String pkg = accessibilityEvent.getPackageName().toString();
+            
+            // 用 Toast 显示当前包名
+            final String finalPkg = pkg;
+            new android.os.Handler(android.os.Looper.getMainLooper()).post(() ->
+                android.widget.Toast.makeText(
+                    NavAccessibilityService.this,
+                    "pkg: " + finalPkg,
+                    android.widget.Toast.LENGTH_SHORT
+                ).show()
+            );
+        }
+        
         if (accessibilityEvent.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
 
             if (FloatingBallUtils.sPendingSwitchToPrevious
