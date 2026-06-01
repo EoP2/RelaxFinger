@@ -14,50 +14,43 @@
         android:layout_height="match_parent">
 
 
-        <com.ogaclejapan.arclayout.ArcLayout
-            android:id="@+id/arc_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            app:arc_axisRadius="@dimen/layout_child_offset_path"
-            app:arc_freeAngle="true"
-            app:arc_origin="right"
-            app:arc_radius="@dimen/layout_radius_path"
-            >
+        <!-- 竖条形菜单：靠右侧居中垂直排列 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/menuA"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                app:arc_angle="150"/>
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/menuB"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                app:arc_angle="120"/>
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/menuC"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                app:arc_angle="90"/>
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/menuD"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                app:arc_angle="60"/>
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginBottom="8dp"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/menuE"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                app:arc_angle="30"/>
+                android:layout_width="46dp"
+                android:layout_height="46dp"/>
 
-        </com.ogaclejapan.arclayout.ArcLayout>
-
-    </FrameLayout>
+        </LinearLayout>
 
 </LinearLayout>
