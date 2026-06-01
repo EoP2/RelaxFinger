@@ -512,19 +512,20 @@ public class FloatViewManager implements BallView.OnBallEventListener,
             String id = "悬浮助手";
             String description = "悬浮助手channel";
 
-            int importance = NotificationManager.IMPORTANCE_HIGH;
+            int importance = NotificationManager.IMPORTANCE_MIN; // ← HIGH 改成 MIN
+
             NotificationChannel mChannel = new NotificationChannel(id, name, importance);
             mChannel.setDescription(description);
-            mChannel.enableVibration(true);
-            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            mChannel.enableVibration(false);          // ← 关闭震动
+            mChannel.setShowBadge(false);             // ← 关闭角标
             mNF.createNotificationChannel(mChannel);
-
+        
             mBuilder =
-                    new NotificationCompat.Builder(mContext,id)
+                    new NotificationCompat.Builder(mContext, id)
                             .setSmallIcon(R.mipmap.ic_launcher)
                             .setContentTitle("RelaxFinger")
-                            .setTicker("悬浮球隐藏到通知栏啦，点击显示!")
-                            .setContentText("点击显示悬浮球");
+                            .setContentText("点击显示悬浮球")
+                            .setPriority(NotificationCompat.PRIORITY_MIN);
 
         }else{
 
