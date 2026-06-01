@@ -164,7 +164,7 @@ public class FloatViewManager implements BallView.OnBallEventListener,
 
         mMenuViewProxy = new MenuViewProxy(mContext);
 
-        calculateMenuPos();
+        ulateMenuPos();
 
     }
 
@@ -273,21 +273,13 @@ public class FloatViewManager implements BallView.OnBallEventListener,
         
             WindowManager.LayoutParams ballParams = mBallView.getWindowLayoutParams();
         
-            int offsetX, offsetY;
-        
             int ballSize = mBallView.getBallSize();
-            // 图标宽度 46dp，转换为 px
-            int iconSize = DensityUtil.dip2px(mContext, 46);
         
-            if (mIsBallRight) {
-                // 悬浮球在右侧：菜单出现在悬浮球左边，水平居中对齐球中心
-                offsetX = -(MenuViewProxy.MENU_WINDOW_WIDTH - ballSize / 2 - iconSize / 2);
-            } else {
-                // 悬浮球在左侧：菜单出现在悬浮球右边，水平居中对齐球中心
-                offsetX = ballSize / 2 - iconSize / 2;
-            }
+            // 水平方向：菜单窗口与悬浮球左边对齐
+            int offsetX = ballSize / 2 - MenuViewProxy.MENU_WINDOW_WIDTH / 2;
         
-            offsetY = -(MenuViewProxy.MENU_WINDOW_HEIGHT / 2 - ballSize / 2);
+            // 垂直方向：菜单窗口与悬浮球垂直居中对齐
+            int offsetY = -(MenuViewProxy.MENU_WINDOW_HEIGHT / 2 - ballSize / 2);
         
             mMenuViewProxy.setMenuPos(ballParams.x + offsetX, ballParams.y + offsetY);
         }
