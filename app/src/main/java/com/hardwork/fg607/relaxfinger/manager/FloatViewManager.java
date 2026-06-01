@@ -164,7 +164,7 @@ public class FloatViewManager implements BallView.OnBallEventListener,
 
         mMenuViewProxy = new MenuViewProxy(mContext);
 
-        ulateMenuPos();
+        calculateMenuPos();
 
     }
 
