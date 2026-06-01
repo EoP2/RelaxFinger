@@ -247,16 +247,15 @@ public class FloatingBallUtils {
 
     }
 
-
-    // 新增：标志位，标记正在等待 Recents 界面出现以完成切换
-    public static volatile boolean sPendingSwitchToPrevious = false;
-    
-    // 修改 previousApp 方法
-    public static void previousApp(AccessibilityService service) {
-        sPendingSwitchToPrevious = true;
+    public static void previousApp(final AccessibilityService service) {
         service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS);
+        new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS);
+            }
+        }, 100);
     }
-
 
     public static boolean isFileExist(String filePath){
 
