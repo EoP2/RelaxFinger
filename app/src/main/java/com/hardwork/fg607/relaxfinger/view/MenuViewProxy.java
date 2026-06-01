@@ -382,11 +382,7 @@ public class MenuViewProxy implements View.OnClickListener {
 
     private void initMenuView() {
 
-        if (mIsBallRight) {
-            mMenuView = LayoutInflater.from(mContext).inflate(R.layout.popup, null);
-        } else {
-            mMenuView = LayoutInflater.from(mContext).inflate(R.layout.popup_left, null);
-        }
+        mMenuView = LayoutInflater.from(mContext).inflate(R.layout.popup, null);
 
         mMenuA = (CircleImageView) mMenuView.findViewById(R.id.menuA);
         mMenuB = (CircleImageView) mMenuView.findViewById(R.id.menuB);
