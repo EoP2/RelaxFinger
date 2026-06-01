@@ -248,8 +248,6 @@ public class FloatViewManager implements BallView.OnBallEventListener,
 */
         if (mMenuViewProxy.getMenuView().getParent() == null) {
 
-            showBackground();
-
             mMenuViewProxy.showMenu(mIsBallRight);
         }
 
