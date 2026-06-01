@@ -77,7 +77,6 @@ public class SettingFragment extends PreferenceFragment implements OnPreferenceC
     private com.jenzz.materialpreference.Preference mFloatBallTheme;
     private com.jenzz.materialpreference.Preference mFloatBallSize;
     private com.jenzz.materialpreference.Preference mFloatBallAlpha;
-    private com.jenzz.materialpreference.Preference mDonation;
 
     private boolean mIsAdmin;
     private DevicePolicyManager mDeviceManager;
@@ -105,10 +104,8 @@ public class SettingFragment extends PreferenceFragment implements OnPreferenceC
     private String mThemeChoosed;
 
     private AlertDialog mThemeDialog;
-    private View mDonateView;
     private View mWeChatCodeView;
     private View mAliPayCodeView;
-    private AlertDialog mDonationDialog;
 
 
     @Override
@@ -280,62 +277,10 @@ public class SettingFragment extends PreferenceFragment implements OnPreferenceC
 
         mFloatBallTheme.setSummary(mPreferences.getString("theme","默认"));
 
-        mDonation = (com.jenzz.materialpreference.Preference) findPreference("donation");
-        mDonation.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-
-                showDonation();
-                return true;
-            }
-        });
-    }
-
-    private void initDonateView() {
-
-        mDonateView = LayoutInflater.from(mContext).inflate(R.layout.donation,null);
-
-        mWeChatCodeView = mDonateView.findViewById(R.id.view_wechat);
-        mAliPayCodeView = mDonateView.findViewById(R.id.view_alipay);
-
-        Button weChat = (Button) mDonateView.findViewById(R.id.btn_wechat);
-
-        Button aliPay = (Button) mDonateView.findViewById(R.id.btn_alipay);
-
-        weChat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                mAliPayCodeView.setVisibility(View.GONE);
-                mWeChatCodeView.setVisibility(View.VISIBLE);
-            }
-        });
-
-        aliPay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                mAliPayCodeView.setVisibility(View.VISIBLE);
-                mWeChatCodeView.setVisibility(View.GONE);
-            }
-        });
 
     }
 
-    private void showDonation() {
 
-        if (mDonationDialog == null) {
-
-            if (mDonateView == null) initDonateView();
-
-            mDonationDialog = new AlertDialog.Builder(mContext)
-                    .setTitle("捐赠支持悬浮助手")
-                    .setView(mDonateView)
-                    .create();
-        }
-
-        mDonationDialog.show();
-    }
 
     private void showThemeDialog() {
 
