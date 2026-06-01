@@ -248,11 +248,13 @@ public class FloatingBallUtils {
     }
 
 
-    public static void previousApp(AccessibilityService service){
-
+    // 新增：标志位，标记正在等待 Recents 界面出现以完成切换
+    public static volatile boolean sPendingSwitchToPrevious = false;
+    
+    // 修改 previousApp 方法
+    public static void previousApp(AccessibilityService service) {
+        sPendingSwitchToPrevious = true;
         service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS);
-        service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS);
-
     }
 
 
