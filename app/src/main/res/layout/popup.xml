@@ -52,5 +52,7 @@
                 android:layout_height="46dp"/>
 
         </LinearLayout>
-
+        
+    </FrameLayout>
+    
 </LinearLayout>
