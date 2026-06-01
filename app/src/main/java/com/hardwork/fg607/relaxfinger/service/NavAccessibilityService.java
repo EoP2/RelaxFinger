@@ -224,6 +224,7 @@ public class NavAccessibilityService extends AccessibilityService {
     // 新增辅助方法，放在类的末尾
     private boolean isRecentsPackage(String pkg) {
         switch (pkg) {
+            case "com.android.launcher3":
             case "com.android.systemui":                 // 原生 AOSP / Pixel
             case "com.miui.home":                        // 小米
             case "com.huawei.android.launcher":          // 华为
