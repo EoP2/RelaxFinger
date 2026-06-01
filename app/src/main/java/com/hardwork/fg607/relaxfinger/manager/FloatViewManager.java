@@ -271,26 +271,28 @@ public class FloatViewManager implements BallView.OnBallEventListener,
         hideBackground();
     }
 
-    private void calculateMenuPos() {
-
-        WindowManager.LayoutParams ballParams = mBallView.getWindowLayoutParams();
-
-        int offsetX, offsetY;
-
-        if (mIsBallRight) {
-
-            offsetX = -(MenuViewProxy.MENU_WINDOW_WIDTH - mBallView.getBallSize());
-
-        } else {
-
-            offsetX = 0;
+        private void calculateMenuPos() {
+        
+            WindowManager.LayoutParams ballParams = mBallView.getWindowLayoutParams();
+        
+            int offsetX, offsetY;
+        
+            int ballSize = mBallView.getBallSize();
+            // 图标宽度 46dp，转换为 px
+            int iconSize = DensityUtil.dip2px(mContext, 46);
+        
+            if (mIsBallRight) {
+                // 悬浮球在右侧：菜单出现在悬浮球左边，水平居中对齐球中心
+                offsetX = -(MenuViewProxy.MENU_WINDOW_WIDTH - ballSize / 2 - iconSize / 2);
+            } else {
+                // 悬浮球在左侧：菜单出现在悬浮球右边，水平居中对齐球中心
+                offsetX = ballSize / 2 - iconSize / 2;
+            }
+        
+            offsetY = -(MenuViewProxy.MENU_WINDOW_HEIGHT / 2 - ballSize / 2);
+        
+            mMenuViewProxy.setMenuPos(ballParams.x + offsetX, ballParams.y + offsetY);
         }
-
-        offsetY = -(MenuViewProxy.MENU_WINDOW_HEIGHT / 2 - mBallView.getBallSize() / 2);
-
-        mMenuViewProxy.setMenuPos(ballParams.x + offsetX, ballParams.y + offsetY);
-
-    }
 
     private void showBackground() {
 
