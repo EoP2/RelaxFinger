@@ -53,7 +53,7 @@ public class BackgroundView extends View {
         mWinLayoutParams.width = DensityUtil.getScreenWidth(mContext);
         mWinLayoutParams.height = DensityUtil.getScreenHeight(mContext);
         mWinLayoutParams.format = PixelFormat.RGBA_8888;
-        mWinLayoutParams.dimAmount = 0.5f;
+        mWinLayoutParams.dimAmount = 0.2f;
 
         //setBackgroundColor(mContext.getResources().getColor(R.color.popbackground));
 
