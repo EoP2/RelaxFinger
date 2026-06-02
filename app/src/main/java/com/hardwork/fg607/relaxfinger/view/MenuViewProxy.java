@@ -128,6 +128,14 @@ public class MenuViewProxy implements View.OnClickListener {
             mMenuD.setScaleY(mappedValue);
             mMenuE.setScaleX(mappedValue);
             mMenuE.setScaleY(mappedValue);
+            mMenuF.setScaleX(mappedValue);
+            mMenuF.setScaleY(mappedValue);
+            mMenuG.setScaleX(mappedValue);
+            mMenuG.setScaleY(mappedValue);
+            mMenuH.setScaleX(mappedValue);
+            mMenuH.setScaleY(mappedValue);
+            mMenuI.setScaleX(mappedValue);
+            mMenuI.setScaleY(mappedValue);
         }
 
     }
