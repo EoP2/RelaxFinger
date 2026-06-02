@@ -60,6 +60,10 @@ import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_B;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_C;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_D;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_E;
+import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_F;
+import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_G;
+import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_H;
+import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_I;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.TYPE_APP;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.TYPE_DEFAULT;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.TYPE_SHORTCUT;
@@ -78,6 +82,14 @@ public class AppSettingFragment extends Fragment implements View.OnClickListener
     RelativeLayout mLayout4;
     @BindView(R.id.app5_layout)
     RelativeLayout mLayout5;
+    @BindView(R.id.app6_layout)
+    RelativeLayout mLayout6;
+    @BindView(R.id.app7_layout)
+    RelativeLayout mLayout7;
+    @BindView(R.id.app8_layout)
+    RelativeLayout mLayout8;
+    @BindView(R.id.app9_layout)
+    RelativeLayout mLayout9;
     @BindView(R.id.app1_name)
     TextView mAppTextView1;
     @BindView(R.id.app2_name)
@@ -88,6 +100,14 @@ public class AppSettingFragment extends Fragment implements View.OnClickListener
     TextView mAppTextView4;
     @BindView(R.id.app5_name)
     TextView mAppTextView5;
+    @BindView(R.id.app6_name)
+    TextView mAppTextView6;
+    @BindView(R.id.app7_name)
+    TextView mAppTextView7;
+    @BindView(R.id.app8_name)
+    TextView mAppTextView8;
+    @BindView(R.id.app9_name)
+    TextView mAppTextView9;
     @BindView(R.id.icon_app1)
     ImageView mAppIcon1;
     @BindView(R.id.icon_app2)
@@ -98,6 +118,14 @@ public class AppSettingFragment extends Fragment implements View.OnClickListener
     ImageView mAppIcon4;
     @BindView(R.id.icon_app5)
     ImageView mAppIcon5;
+    @BindView(R.id.icon_app6)
+    ImageView mAppIcon6;
+    @BindView(R.id.icon_app7)
+    ImageView mAppIcon7;
+    @BindView(R.id.icon_app8)
+    ImageView mAppIcon8;
+    @BindView(R.id.icon_app9)
+    ImageView mAppIcon9;
     private TextView mCurrentTextView;
     private ImageView mCurrentIcon;
     private FunctionDialog mFuncDialog;
@@ -107,6 +135,10 @@ public class AppSettingFragment extends Fragment implements View.OnClickListener
     private HashMap<String, MenuDataSugar> menu3Map = new HashMap<String, MenuDataSugar>();
     private HashMap<String, MenuDataSugar> menu4Map = new HashMap<String, MenuDataSugar>();
     private HashMap<String, MenuDataSugar> menu5Map = new HashMap<String, MenuDataSugar>();
+    private HashMap<String, MenuDataSugar> menu6Map = new HashMap<String, MenuDataSugar>();
+    private HashMap<String, MenuDataSugar> menu7Map = new HashMap<String, MenuDataSugar>();
+    private HashMap<String, MenuDataSugar> menu8Map = new HashMap<String, MenuDataSugar>();
+    private HashMap<String, MenuDataSugar> menu9Map = new HashMap<String, MenuDataSugar>();
 
     static String mCurrentMenu;
     static HashMap<String, MenuDataSugar> currentMenuMap = null;
@@ -159,6 +191,18 @@ public class AppSettingFragment extends Fragment implements View.OnClickListener
                 case MENU_E:
                     menu5Map.put(menuData.getAction(), menuData);
                     break;
+                case MENU_F:
+                    menu6Map.put(menuData.getAction(), menuData);
+                    break;
+                case MENU_G:
+                    menu7Map.put(menuData.getAction(), menuData);
+                    break;
+                case MENU_H:
+                    menu8Map.put(menuData.getAction(), menuData);
+                    break;
+                case MENU_I:
+                    menu9Map.put(menuData.getAction(), menuData);
+                    break;
                 default:
                     break;
             }
@@ -173,12 +217,20 @@ public class AppSettingFragment extends Fragment implements View.OnClickListener
         mLayout3.setOnClickListener(this);
         mLayout4.setOnClickListener(this);
         mLayout5.setOnClickListener(this);
+        mLayout6.setOnClickListener(this);
+        mLayout7.setOnClickListener(this);
+        mLayout8.setOnClickListener(this);
+        mLayout9.setOnClickListener(this);
 
         generateMenu(menu1Map, mAppTextView1, mAppIcon1);
         generateMenu(menu2Map, mAppTextView2, mAppIcon2);
         generateMenu(menu3Map, mAppTextView3, mAppIcon3);
         generateMenu(menu4Map, mAppTextView4, mAppIcon4);
         generateMenu(menu5Map, mAppTextView5, mAppIcon5);
+        generateMenu(menu6Map, mAppTextView6, mAppIcon6);
+        generateMenu(menu7Map, mAppTextView7, mAppIcon7);
+        generateMenu(menu8Map, mAppTextView8, mAppIcon8);
+        generateMenu(menu9Map, mAppTextView9, mAppIcon9);
 
     }
 
@@ -338,6 +390,30 @@ public class AppSettingFragment extends Fragment implements View.OnClickListener
                 mCurrentIcon = mAppIcon5;
                 mCurrentMenu = MENU_E;
                 currentMenuMap = menu5Map;
+                break;
+            case R.id.app6_layout:
+                mCurrentTextView = mAppTextView6;
+                mCurrentIcon = mAppIcon6;
+                mCurrentMenu = MENU_F;
+                currentMenuMap = menu6Map;
+                break;
+            case R.id.app7_layout:
+                mCurrentTextView = mAppTextView7;
+                mCurrentIcon = mAppIcon7;
+                mCurrentMenu = MENU_G;
+                currentMenuMap = menu7Map;
+                break;
+            case R.id.app8_layout:
+                mCurrentTextView = mAppTextView8;
+                mCurrentIcon = mAppIcon8;
+                mCurrentMenu = MENU_H;
+                currentMenuMap = menu8Map;
+                break;
+            case R.id.app9_layout:
+                mCurrentTextView = mAppTextView9;
+                mCurrentIcon = mAppIcon9;
+                mCurrentMenu = MENU_I;
+                currentMenuMap = menu9Map;
                 break;
             default:
                 break;
@@ -980,6 +1056,19 @@ public class AppSettingFragment extends Fragment implements View.OnClickListener
             releaseBitmap(drawable);
 
             drawable = mAppIcon5.getBackground();
+
+            releaseBitmap(drawable);
+
+            drawable = mAppIcon6.getBackground();
+
+            releaseBitmap(drawable);
+            drawable = mAppIcon7.getBackground();
+
+            releaseBitmap(drawable);
+            drawable = mAppIcon8.getBackground();
+
+            releaseBitmap(drawable);
+            drawable = mAppIcon9.getBackground();
 
             releaseBitmap(drawable);
 
