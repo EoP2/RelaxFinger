@@ -16,7 +16,7 @@
 		<ScrollView
 		    android:layout_width="wrap_content"
 		    android:layout_height="280dp"
-		    android:layout_gravity="right|center_vertical"
+		    android:layout_gravity="right"
 		    android:scrollbars="none"
 		    android:background="@drawable/menu_bg"
 		    android:padding="6dp"
