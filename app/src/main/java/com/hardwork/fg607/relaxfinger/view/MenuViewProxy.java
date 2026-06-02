@@ -108,6 +108,10 @@ public class MenuViewProxy implements View.OnClickListener {
         void clickeMenuC();
         void clickeMenuD();
         void clickeMenuE();
+        void clickeMenuF();
+        void clickeMenuG();
+        void clickeMenuH();
+        void clickeMenuI();
         void closeMenu();
     }
 
