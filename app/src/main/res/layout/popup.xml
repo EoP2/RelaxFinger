@@ -55,22 +55,26 @@
 	            <de.hdodenhof.circleimageview.CircleImageView
 	                android:id="@+id/menuE"
 	                android:layout_width="46dp"
-	                android:layout_height="46dp"/>
+	                android:layout_height="46dp"
+	                android:layout_marginBottom="8dp"/>
 	
 	            <de.hdodenhof.circleimageview.CircleImageView
 	                android:id="@+id/menuF"
 	                android:layout_width="46dp"
-	                android:layout_height="46dp"/>
+	                android:layout_height="46dp"
+	                android:layout_marginBottom="8dp"/>
 	
 	            <de.hdodenhof.circleimageview.CircleImageView
 	                android:id="@+id/menuG"
 	                android:layout_width="46dp"
-	                android:layout_height="46dp"/>
+	                android:layout_height="46dp"
+	                android:layout_marginBottom="8dp"/>
 	
 	            <de.hdodenhof.circleimageview.CircleImageView
 	                android:id="@+id/menuH"
 	                android:layout_width="46dp"
-	                android:layout_height="46dp"/>
+	                android:layout_height="46dp"
+	                android:layout_marginBottom="8dp"/>
 	
 	            <de.hdodenhof.circleimageview.CircleImageView
 	                android:id="@+id/menuI"
