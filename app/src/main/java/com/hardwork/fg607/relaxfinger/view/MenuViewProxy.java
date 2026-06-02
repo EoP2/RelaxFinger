@@ -67,7 +67,7 @@ public class MenuViewProxy implements View.OnClickListener {
     private static final int CLEAR_COUNT = 5;
 
     public static final int MENU_WINDOW_WIDTH = DensityUtil.dip2px(MyApplication.getApplication(), 60);
-    public static final int MENU_WINDOW_HEIGHT = DensityUtil.dip2px(MyApplication.getApplication(), 560);
+    public static final int MENU_WINDOW_HEIGHT = DensityUtil.dip2px(MyApplication.getApplication(), 280);
     private final WindowManager mWindowManager;
 
     private int mIsExistItem = 0;
