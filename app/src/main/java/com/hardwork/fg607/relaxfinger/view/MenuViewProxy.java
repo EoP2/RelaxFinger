@@ -59,6 +59,10 @@ public class MenuViewProxy implements View.OnClickListener {
     public static final String MENU_C = "3";
     public static final String MENU_D = "4";
     public static final String MENU_E = "5";
+    public static final String MENU_F = "6";
+    public static final String MENU_G = "7";
+    public static final String MENU_H = "8";
+    public static final String MENU_I = "9";
     private static final int MAX_FOLDER_ICONS = 9;
     private static final int CLEAR_COUNT = 5;
 
@@ -66,8 +70,8 @@ public class MenuViewProxy implements View.OnClickListener {
     public static final int MENU_WINDOW_HEIGHT = DensityUtil.dip2px(MyApplication.getApplication(), 280);
     private final WindowManager mWindowManager;
 
-    private byte mIsExistItem = 0;
-    private final byte mExistAllItem = (byte) (1 << 0 | 1 << 1 | 1 << 2 | 1 << 3 | 1 << 4);
+    private int mIsExistItem = 0;
+    private final int mExistAllItem = (1<<0|1<<1|1<<2|1<<3|1<<4|1<<5|1<<6|1<<7|1<<8);
     private int mClearCount = 0;
 
     private Context mContext;
@@ -81,6 +85,10 @@ public class MenuViewProxy implements View.OnClickListener {
     private CircleImageView mMenuC;
     private CircleImageView mMenuD;
     private CircleImageView mMenuE;
+    private CircleImageView mMenuF;
+    private CircleImageView mMenuG;
+    private CircleImageView mMenuH;
+    private CircleImageView mMenuI;
     private FrameLayout mMenuLayout;
     private AnimationSet mShowAnimationSetL;
     private AnimationSet mShowAnimationSetR;
@@ -389,12 +397,20 @@ public class MenuViewProxy implements View.OnClickListener {
         mMenuC = (CircleImageView) mMenuView.findViewById(R.id.menuC);
         mMenuD = (CircleImageView) mMenuView.findViewById(R.id.menuD);
         mMenuE = (CircleImageView) mMenuView.findViewById(R.id.menuE);
+        mMenuF = (CircleImageView) mMenuView.findViewById(R.id.menuF);
+        mMenuG = (CircleImageView) mMenuView.findViewById(R.id.menuG);
+        mMenuH = (CircleImageView) mMenuView.findViewById(R.id.menuH);
+        mMenuI = (CircleImageView) mMenuView.findViewById(R.id.menuI);
 
         mMenuA.setOnClickListener(this);
         mMenuB.setOnClickListener(this);
         mMenuC.setOnClickListener(this);
         mMenuD.setOnClickListener(this);
         mMenuE.setOnClickListener(this);
+        mMenuF.setOnClickListener(this);
+        mMenuG.setOnClickListener(this);
+        mMenuH.setOnClickListener(this);
+        mMenuI.setOnClickListener(this);
 
         updateMenuIcons();
 
@@ -441,6 +457,18 @@ public class MenuViewProxy implements View.OnClickListener {
                 break;
             case MENU_E:
                 imageView = mMenuE;
+                break;
+            case MENU_F:
+                imageView = mMenuF;
+                break;
+            case MENU_G:
+                imageView = mMenuG;
+                break;
+            case MENU_H:
+                imageView = mMenuH;
+                break;
+            case MENU_I:
+                imageView = mMenuI;
                 break;
             default:
                 break;
@@ -589,6 +617,18 @@ public class MenuViewProxy implements View.OnClickListener {
             case R.id.menuE:
                 mItemClickListener.clickeMenuE();
                 break;
+            case R.id.menuF:
+                mItemClickListener.clickeMenuF();
+                break;
+            case R.id.menuG:
+                mItemClickListener.clickeMenuG();
+                break;
+            case R.id.menuH:
+                mItemClickListener.clickeMenuH();
+                break;
+            case R.id.menuI:
+                mItemClickListener.clickeMenuI();
+                break;
             default:
                 closeMenu();
                 break;
@@ -656,6 +696,10 @@ public class MenuViewProxy implements View.OnClickListener {
         updateMenuIcon(MENU_C);
         updateMenuIcon(MENU_D);
         updateMenuIcon(MENU_E);
+        updateMenuIcon(MENU_F);
+        updateMenuIcon(MENU_G);
+        updateMenuIcon(MENU_H);
+        updateMenuIcon(MENU_I);
     }
 
     public void closeMenu() {
