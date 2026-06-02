@@ -13,68 +13,73 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <!-- 竖条形菜单：靠右侧居中垂直排列 -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:background="@drawable/menu_bg"
-			android:padding="6dp"
-			android:paddingRight="4dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuA"
-                android:layout_width="46dp"
-                android:layout_height="46dp"
-                android:layout_marginBottom="8dp"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuB"
-                android:layout_width="46dp"
-                android:layout_height="46dp"
-                android:layout_marginBottom="8dp"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuC"
-                android:layout_width="46dp"
-                android:layout_height="46dp"
-                android:layout_marginBottom="8dp"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuD"
-                android:layout_width="46dp"
-                android:layout_height="46dp"
-                android:layout_marginBottom="8dp"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuE"
-                android:layout_width="46dp"
-                android:layout_height="46dp"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuF"
-                android:layout_width="46dp"
-                android:layout_height="46dp"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuG"
-                android:layout_width="46dp"
-                android:layout_height="46dp"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuH"
-                android:layout_width="46dp"
-                android:layout_height="46dp"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menuI"
-                android:layout_width="46dp"
-                android:layout_height="46dp"/>
-
-        </LinearLayout>
+		<ScrollView
+		    android:layout_width="wrap_content"
+		    android:layout_height="280dp"
+		    android:layout_gravity="right|center_vertical"
+		    android:scrollbars="none">
+	        <!-- 竖条形菜单：靠右侧居中垂直排列 -->
+	        <LinearLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right|center_vertical"
+	            android:orientation="vertical"
+	            android:gravity="center_horizontal"
+	            android:background="@drawable/menu_bg"
+				android:padding="6dp"
+				android:paddingRight="4dp">
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuA"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"
+	                android:layout_marginBottom="8dp"/>
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuB"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"
+	                android:layout_marginBottom="8dp"/>
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuC"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"
+	                android:layout_marginBottom="8dp"/>
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuD"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"
+	                android:layout_marginBottom="8dp"/>
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuE"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"/>
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuF"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"/>
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuG"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"/>
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuH"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"/>
+	
+	            <de.hdodenhof.circleimageview.CircleImageView
+	                android:id="@+id/menuI"
+	                android:layout_width="46dp"
+	                android:layout_height="46dp"/>
+	
+	        </LinearLayout>
+		</ScrollView>		
 
     </FrameLayout>
 
