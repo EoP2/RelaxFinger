@@ -15,7 +15,8 @@
 
 		<ScrollView
 		    android:layout_width="wrap_content"
-		    android:layout_height="280dp"
+			android:layout_height="wrap_content"
+		    android:maxHeight="280dp"
 		    android:layout_gravity="top|right"
 		    android:scrollbars="none"
 		    android:background="@drawable/menu_bg"
