@@ -29,6 +29,10 @@ import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_B;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_C;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_D;
 import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_E;
+import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_F;
+import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_G;
+import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_H;
+import static com.hardwork.fg607.relaxfinger.view.MenuViewProxy.MENU_I;
 
 /**
  * Created by fg607 on 16-11-25.
@@ -475,6 +479,29 @@ public class GestureImpl implements BallView.OnGestureListener,MenuViewProxy.OnM
     public void clickeMenuE() {
 
         menuClick(MENU_E);
+    }
+    @Override
+    public void clickeMenuF() {
+
+        menuClick(MENU_F);
+    }
+
+    @Override
+    public void clickeMenuG() {
+
+        menuClick(MENU_G);
+    }
+
+    @Override
+    public void clickeMenuH() {
+
+        menuClick(MENU_H);
+    }
+
+    @Override
+    public void clickeMenuI() {
+
+        menuClick(MENU_I);
     }
 
     @Override
