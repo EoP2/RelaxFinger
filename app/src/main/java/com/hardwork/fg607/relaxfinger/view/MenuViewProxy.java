@@ -16,6 +16,9 @@ import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ScrollView;
+import android.widget.LinearLayout;
+import android.view.ViewGroup;
 
 import com.facebook.rebound.SimpleSpringListener;
 import com.facebook.rebound.Spring;
