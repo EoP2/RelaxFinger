@@ -404,6 +404,21 @@ public class MenuViewProxy implements View.OnClickListener {
 
         mMenuView = LayoutInflater.from(mContext).inflate(R.layout.popup, null);
 
+        ScrollView scrollView = (ScrollView) mMenuView.findViewById(R.id.menu_scroll);
+
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                LinearLayout menuList = (LinearLayout) scrollView.getChildAt(0);
+                int contentHeight = menuList.getMeasuredHeight();
+                int maxHeight = DensityUtil.dip2px(mContext, 280);
+                
+                ViewGroup.LayoutParams params = scrollView.getLayoutParams();
+                params.height = Math.min(contentHeight, maxHeight);
+                scrollView.setLayoutParams(params);
+            }
+        });
+
         mMenuA = (CircleImageView) mMenuView.findViewById(R.id.menuA);
         mMenuB = (CircleImageView) mMenuView.findViewById(R.id.menuB);
         mMenuC = (CircleImageView) mMenuView.findViewById(R.id.menuC);
