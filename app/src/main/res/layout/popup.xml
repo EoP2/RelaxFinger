@@ -14,13 +14,13 @@
         android:layout_height="match_parent">
 
 		<ScrollView
+		    android:id="@+id/menu_scroll"
 		    android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-		    android:maxHeight="280dp"
+		    android:layout_height="wrap_content"
 		    android:layout_gravity="top|right"
 		    android:scrollbars="none"
 		    android:background="@drawable/menu_bg"
-		    android:padding="6dp"
+		    android:padding="6dp">
 		    android:paddingRight="4dp">
 	        <!-- 竖条形菜单：靠右侧居中垂直排列 -->
 	        <LinearLayout
